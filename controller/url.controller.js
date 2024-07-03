@@ -12,9 +12,8 @@ const generateShortUrl = async (req, res) => {
         redirectURL: body.url,
         visitHistory: []
     })
-    return res.status(200).json({ url: `https://urlShortner/${shortId}` });
-    // for local host 
-    // return res.status(200).json({url: `http://localhost:3000/urlShortner/${shortId}`});
+    return res.status(200).json({ url: `${deployedURL}/urlShortner/${shortId}` });
+    
 }
 
 const redirectToURL = async (req, res) => {
