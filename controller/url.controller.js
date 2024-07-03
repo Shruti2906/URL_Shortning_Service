@@ -1,10 +1,9 @@
 const { nanoid } = require("nanoid");
 const url = require('../model/url.model');
-
-const deployedURL = process.env.deployedURL;
+require('dotenv').config();
 
 const generateShortUrl = async (req, res) => {
-    
+    const deployedURL = process.env.deployedURL;
     const body = req.body;
     if (!body.url) {
         return res.status(400).json({ error: "url is required" });
