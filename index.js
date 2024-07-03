@@ -14,7 +14,8 @@ connectToMongoDB().then(() => {
     console.log("DB Connected!!");
 });
 
-app.use("/urlShortner", urlRoutes);
+// app.use("/*")
+app.use("/", urlRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server Started At PORT ${PORT}`);
