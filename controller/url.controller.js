@@ -1,7 +1,10 @@
 const { nanoid } = require("nanoid");
 const url = require('../model/url.model');
 
+const deployedURL = process.env.deployedURL;
+
 const generateShortUrl = async (req, res) => {
+    
     const body = req.body;
     if (!body.url) {
         return res.status(400).json({ error: "url is required" });
